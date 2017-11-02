@@ -1,7 +1,7 @@
 {
 	"name": "cerus",
 	"version": "0.0.1",
-	"description": "The main module for CerusJS",
+	"description": "Another pluginable web framework",
 	"main": "index.js",
 	"repository": {
 		"type": "git",
