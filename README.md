@@ -5,7 +5,7 @@ CerusJS is a open, pluginable and free to use framework for NodeJS. Since everyt
 
 ## Installation
 CerusJS is avaiable through [NPM](https://www.npmjs.com). 
-Before installing CerusJS though, make sure you have [NodeJS](https://nodejs.org/en/download/) installed.
+Before installing CerusJS make sure you have [NodeJS](https://nodejs.org/en/download/) installed.
 ```bash
 # Installs the latest version of CerusJS.
 $ npm install cerus
