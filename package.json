@@ -24,6 +24,7 @@
 		"cerus-settings": "^0.0.6"
 	},
 	"devDependencies": {
+		"cerus-database": "0.0.1",
 		"cerus-sessions": "^0.0.3",
 		"cerus-uuid": "^0.0.1",
 		"request": "^2.83.0"
