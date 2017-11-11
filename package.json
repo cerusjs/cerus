@@ -19,7 +19,7 @@
 		"cerus-core": "^0.0.2",
 		"cerus-fs": "^0.0.1",
 		"cerus-promise": "^0.0.3",
-		"cerus-router": "0.0.9",
+		"cerus-router": "0.0.10",
 		"cerus-server": "^0.0.2",
 		"cerus-settings": "^0.0.6"
 	},
