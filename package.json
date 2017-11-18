@@ -11,7 +11,9 @@
 	"bugs": {
 		"url": "https://github.com/cerusjs/cerus/issues"
 	},
-	"scripts": {},
+	"scripts": {
+		"test": "./node_modules/.bin/mocha tests --reporter spec"
+	},
 	"homepage": "https://github.com/cerusjs/cerus",
 	"dependencies": {
 		"cerus-api": "^0.0.1",
@@ -20,13 +22,12 @@
 		"cerus-fs": "^0.0.1",
 		"cerus-promise": "^0.0.3",
 		"cerus-router": "0.0.10",
-		"cerus-server": "^0.0.2",
+		"cerus-server": "0.0.3",
 		"cerus-settings": "^0.0.6"
 	},
 	"devDependencies": {
-		"cerus-database": "0.0.1",
-		"cerus-sessions": "^0.0.3",
-		"cerus-uuid": "^0.0.1",
-		"request": "^2.83.0"
+		"cerus-request": "0.0.2",
+		"chai": "^4.1.2",
+		"mocha": "^4.0.1"
 	}
 }
