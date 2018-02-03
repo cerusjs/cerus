@@ -12,7 +12,8 @@
 		"url": "https://github.com/cerusjs/cerus/issues"
 	},
 	"scripts": {
-		"test": "./node_modules/.bin/mocha tests --reporter spec"
+		"test": "./node_modules/.bin/mocha tests --reporter spec",
+		"lint": "eslint lib/"
 	},
 	"homepage": "https://github.com/cerusjs/cerus",
 	"dependencies": {
