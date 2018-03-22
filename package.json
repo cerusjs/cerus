@@ -19,7 +19,7 @@
 	"dependencies": {
 		"cerus-api": "^0.1.0",
 		"cerus-compression": "^0.1.2",
-		"cerus-core": "^0.1.1",
+		"cerus-core": "^0.1.2",
 		"cerus-fs": "^0.0.3",
 		"cerus-promise": "^0.1.0",
 		"cerus-router": "^0.1.3",
