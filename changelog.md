@@ -1,5 +1,11 @@
 # Changelog
 
+## v0.1.1 (22 Mar. 2018)
+- (New) Added documentation for all the classes.
+- (Enh) Updated most of the plugins.
+- (Fix) Fixed some wrong naming of functions.
+- (Del) Finally removed cerus-settings.
+
 ## v0.1.0 (3 Feb. 2018)
 - (New) Redid the whole module.
 - (New) Added eslint and fixed issues it found.
