@@ -38,4 +38,4 @@ cerus.server().start();
 
 
 ## Contributers
-The author of CerusJS is [JortHub](https://github.com/JortHub).
+The author of CerusJS is [JortvD](https://github.com/JortvD).
