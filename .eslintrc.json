@@ -1,0 +1,99 @@
+{
+    "env": {
+        "node": true
+    },
+    "extends": "eslint:recommended",
+    "parserOptions": {
+        "sourceType": "module"
+    },
+    "rules": {
+        "indent": [
+            "error",
+            "tab",
+            {"SwitchCase": 1, "MemberExpression": 0}
+        ],
+        "linebreak-style": [
+            "error",
+            "windows"
+        ],
+        "quotes": [
+            "error",
+            "double"
+        ],
+        "semi": [
+            "error",
+            "always"
+        ],
+        "padding-line-between-statements": [
+            "error",
+            {"blankLine": "always", "prev": "*", "next": "return"},
+            {"blankLine": "always", "prev": ["const", "let", "var"], "next": "*"}, 
+            {"blankLine": "any", "prev": ["const", "let", "var"], "next": ["const", "let", "var"]}
+        ],
+        "no-console": [
+            "off"
+        ],
+        "eqeqeq": [
+            "error", 
+            "always"
+        ],
+        "func-style": [
+            "error",
+            "expression"
+        ],
+        "no-empty-function": [
+            "error"
+        ],
+        "no-new-object": [
+            "error"
+        ],
+        "no-new-func": [
+            "error"
+        ],
+        "quote-props": [
+            "error",
+            "as-needed"
+        ],
+        "no-array-constructor": [
+            "error"
+        ],
+        "no-eval": [
+            "error"
+        ],
+        "prefer-rest-params": [
+            "error"
+        ],
+        "space-before-function-paren": [
+            "error",
+            "never"
+        ],
+        "keyword-spacing": [
+            "error",
+            {
+                "overrides": {
+                    "if": {"after": false},
+                    "for": {"after": false},
+                    "while": {"after": false},
+                    "catch": {"after": false},
+                    "switch": {"after": false}
+                }
+            }
+        ],
+        "no-param-reassign": [
+            "error"
+        ],
+        "prefer-spread": [
+            "error"
+        ],
+        "brace-style": [
+            "error",
+            "stroustrup"
+        ],
+        "no-else-return": [
+            "error"
+        ],
+        "spaced-comment": [
+            "error"
+        ]
+    }
+}
