@@ -93,6 +93,10 @@ describe("cerus.require", function() {
 });
 
 describe("cerus.autoroute", function() {
+	beforeEach(function() {
+		cerus.router()._stack = [];
+	});
+
 	describe("#favicon", function() {
 		context("with no parameters", function() {
 			it("should throw a TypeError", function() {
@@ -105,10 +109,11 @@ describe("cerus.autoroute", function() {
 		});
 
 		context("with a non-existant file", function() {
-			it("should throw an error", function() {
+			it("should throw an error", function(done) {
 				cerus.autoroute().favicon("icon/notfavicon.png")
 				.catch(function(err) {
 					expect(err).to.be.an("error");
+					done();
 				});
 			});
 		});
@@ -198,10 +203,11 @@ describe("cerus.autoroute", function() {
 		});
 
 		context("with a non-existant file", function() {
-			it("should throw an error", function() {
+			it("should throw an error", function(done) {
 				cerus.autoroute().view("/", "notview")
 				.catch(function(err) {
 					expect(err).to.be.an("error");
+					done();
 				});
 			});
 		});
@@ -291,10 +297,11 @@ describe("cerus.autoroute", function() {
 		});
 
 		context("with a non-existant folder", function() {
-			it("should throw an error", function() {
+			it("should throw an error", function(done) {
 				cerus.autoroute().assets("/non-existant/")
 				.catch(function(err) {
 					expect(err).to.be.an("error");
+					done();
 				});
 			});
 		});
@@ -302,55 +309,16 @@ describe("cerus.autoroute", function() {
 		context("with a single file", function() {
 			context("with a relative path", function() {
 				it("should route just fine", function(done) {
-					cerus.autoroute().assets("css").catch(throw_);
-					cerus.server().start()
-					.then(function() {
-						cerus.request()
-						.path("/css/styles.css")
-						.expect("body", "body{margin:0;}")
-						.send(function() {
-							cerus.server().stop()
-							.then(function() {
-								done();
-							});
-						});
-					});
-				});
-			});
-
-			context("with an absolute path", function() {
-				it("should route just fine", function(done) {
-					cerus.autoroute().assets(__dirname + "/assets/css").catch(throw_);
-					cerus.server().start()
-					.then(function() {
-						cerus.request()
-						.path("/css/styles.css")
-						.expect("body", "body{margin:0;}")
-						.send(function() {
-							cerus.server().stop()
-							.then(function() {
-								done();
-							});
-						});
-					});
-				});
-			});
-		});
-
-		context("with multiple files", function() {
-			context("with a relative path", function() {
-				it("should route just fine", function(done) {
-					cerus.autoroute().assets("js").catch(throw_);
-					cerus.server().start()
-					.then(function() {
-						cerus.request()
-						.path("/js/script1.js")
-						.expect("body", "console.log();")
-						.send(function() {
+					cerus.autoroute().assets("css").catch(throw_)
+					.on("finish", function() {
+						cerus.server().start()
+						.then(function() {
 							cerus.request()
-							.path("/js/script2.js")
-							.expect("body", "window.log();")
-							.send(function() {
+							.path("/css/styles.css")
+							.expect("body", "body{margin:0;}")
+							.send(function(err) {
+								if(err) throw err;
+								
 								cerus.server().stop()
 								.then(function() {
 									done();
@@ -363,17 +331,68 @@ describe("cerus.autoroute", function() {
 
 			context("with an absolute path", function() {
 				it("should route just fine", function(done) {
-					cerus.server().start()
-					.then(function() {
-						cerus.autoroute().assets(__dirname + "/assets/js").catch(throw_);
-						cerus.request()
-						.path("/js/script1.js")
-						.expect("body", "console.log();")
-						.send(function() {
+					cerus.autoroute().assets(__dirname + "/assets/css").catch(throw_)
+					.on("finish", function() {
+						cerus.server().start()
+						.then(function() {
 							cerus.request()
+							.path("/css/styles.css")
+							.expect("body", "body{margin:0;}")
+							.send(function(err) {
+								if(err) throw err;
+	
+								cerus.server().stop()
+								.then(function() {
+									done();
+								});
+							});
+						});
+					});
+				});
+			});
+		});
+
+		context("with multiple files", function() {
+			context("with a relative path", function() {
+				it("should route just fine", function(done) {
+					cerus.autoroute().assets("js").catch(throw_)
+					.on("finish", function() {
+						cerus.server().start()
+						.then(function() {
+							cerus.request()
+							.path("/js/script1.js")
+							.expect("body", "console.log();")
+							.send()
 							.path("/js/script2.js")
 							.expect("body", "window.log();")
-							.send(function() {
+							.send(function(err) {
+								if(err) throw err;
+	
+								cerus.server().stop()
+								.then(function() {
+									done();
+								});
+							});
+						});
+					});
+				});
+			});
+
+			context("with an absolute path", function() {
+				it("should route just fine", function(done) {
+					cerus.autoroute().assets(__dirname + "/assets/js").catch(throw_)
+					.on("finish", function() {
+						cerus.server().start()
+						.then(function() {
+							cerus.request()
+							.path("/js/script1.js")
+							.expect("body", "console.log();")
+							.send()
+							.path("/js/script2.js")
+							.expect("body", "window.log();")
+							.send(function(err) {
+								if(err) throw err;
+	
 								cerus.server().stop()
 								.then(function() {
 									done();
