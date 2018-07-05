@@ -20,7 +20,7 @@
 		"cerus-api": "^0.1.2",
 		"cerus-compression": "^0.1.3",
 		"cerus-core": "^0.1.4",
-		"cerus-fs": "^0.1.9",
+		"cerus-fs": "^0.1.10",
 		"cerus-promise": "^0.1.1",
 		"cerus-router": "^0.1.6",
 		"cerus-server": "^0.1.2"
