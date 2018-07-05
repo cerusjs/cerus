@@ -1,6 +1,6 @@
 <p align="center">
-![alt text](https://i.imgur.com/owrQCO9.png "CerusJS")<br>
-<p align="center">[NPM](https://www.npmjs.com/~cerusjs) | [Github](https://github.com/cerusjs) | [Docs](https://cerusjs.github.io/)</p>
+	<img height="200" width="500" src="https://i.imgur.com/owrQCO9.png">
+	<p align="center"><a href="https://www.npmjs.com/~cerusjs">NPM</a> | <a href="https://github.com/cerusjs">Github</a> | <a href="https://cerusjs.github.io/">Docs</a></p>
 </p>
 
 CerusJS is a modular, and even more important, understandable NodeJS framework. It is built to be as lightweight as you want it to be. Pick what you want to use to maximize performance or just be free of bloat. On top of that, CerusJS is also created to be easy to learn and easy to master. All names are styled similarly to make everything intuitive to use. This module is used as "hub", containing all the basic modules you'll need to create a basic webserver.
