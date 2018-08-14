@@ -1,6 +1,6 @@
 {
 	"name": "cerus",
-	"version": "0.1.8",
+	"version": "0.1.9",
 	"description": "Another pluginable web framework",
 	"main": "index.js",
 	"repository": {
